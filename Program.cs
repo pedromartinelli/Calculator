@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Divisao();
+        Multiplicacao();
     }
 
     static void Soma()
@@ -55,6 +55,23 @@ class Program
 
         var resultado = v1 / v2;
         Console.WriteLine($"O resultado da divisão é: {resultado}");
+        Console.ReadKey();
+    }
+
+    static void Multiplicacao()
+    {
+        Console.Clear();
+
+        Console.WriteLine("Primeiro valor:");
+        var v1 = float.Parse(Console.ReadLine()!);
+
+        Console.WriteLine("Segundo valor:");
+        var v2 = float.Parse(Console.ReadLine()!);
+
+        Console.WriteLine("");
+
+        var resultado = v1 * v2;
+        Console.WriteLine($"O resultado da multiplicação é: {resultado}");
         Console.ReadKey();
     }
 }
