@@ -16,6 +16,7 @@ class Program
         Console.WriteLine("2 - Subtração");
         Console.WriteLine("3 - Multiplicação");
         Console.WriteLine("4 - Divisão");
+        Console.WriteLine("5 - Sair");
 
         Console.WriteLine("-------------------");
         Console.Write("Selecione uma opção: ");
@@ -28,23 +29,38 @@ class Program
             case 2: Subtracao(); break;
             case 3: Multiplicacao(); break;
             case 4: Divisao(); break;
+            case 5: Exit(); break;
             default: Menu(); break;
         }
+    }
+
+    static void Exit()
+    {
+        Console.Clear();
+        Console.WriteLine("Obrigado por utilizar nossa aplicação! Aperte qualquer tecla para sair.");
+        Console.ReadKey();
+
+        System.Environment.Exit(0);
     }
 
     static void Soma()
     {
         Console.Clear();
 
-        Console.Write("Primeiro valor: ");
-        float v1 = float.Parse(Console.ReadLine()!);
+        Console.WriteLine("Quantos números você deseja somar?");
+        short n = short.Parse(Console.ReadLine()!);
 
-        Console.Write("Segundo valor: ");
-        float v2 = float.Parse(Console.ReadLine()!);
+        float resultado = 0;
+
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write($"Digite o {i}º número: ");
+            float valor = float.Parse(Console.ReadLine()!);
+            resultado += valor;
+        }
 
         Console.WriteLine("");
 
-        var resultado = v1 + v2;
         Console.WriteLine($"O resultado da soma é: {resultado}");
         Console.ReadKey();
         Menu();
@@ -103,5 +119,4 @@ class Program
         Console.ReadKey();
         Menu();
     }
-
 }
