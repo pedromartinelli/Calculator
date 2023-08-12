@@ -4,7 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        Multiplicacao();
+        Menu();
+    }
+
+    static void Menu()
+    {
+        Console.WriteLine("O que deseja fazer?");
+        Console.WriteLine("1 - Soma");
+        Console.WriteLine("2 - Subtração");
+        Console.WriteLine("3 - Multiplicação");
+        Console.WriteLine("4 - Divisão");
+
+        Console.WriteLine("-------------------");
+        Console.Write("Selecione uma opção: ");
+
+        short res = short.Parse(Console.ReadLine()!);
     }
 
     static void Soma()
